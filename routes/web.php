@@ -15,5 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('offers', 'API\OffersController');
-Route::resource('articles', 'API\articlesController');
+
+Route::resource('articlesViews', 'ArticlesController');
+Route::resource('offersViews', 'OffersController');
