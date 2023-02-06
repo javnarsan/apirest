@@ -85,13 +85,13 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <h2>
+                      <a href="{{ route('offersViews.index') }}" class="text-light card-title">{{ __('Offers') }}</a>
+                   </h2>
+                   <h2>
+                      <a href="{{ route('articlesViews.index') }}" class="text-light card-title">{{ __('Articles') }}</a>
+                   </h2>
+                ¡
                 </div>
             </div>
         </div>
