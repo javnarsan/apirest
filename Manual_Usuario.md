@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/93120404/155341734-dba85e0b-47c3-42eb-87b5-a2165dcee676.png)
+![image](![Portada](https://user-images.githubusercontent.com/81263549/219768750-ce69dfa1-d1ec-4df6-860d-4ac61eb3516a.jpg))
 
 <a name="top"></a>
 # Manual Usuario de la API de Laravel
