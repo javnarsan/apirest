@@ -45,6 +45,6 @@ class RegisterController extends Controller {
         else {
             return response()->json(['error' => 'No estás autorizado'], 401);
         }
-}
+    }
 
 }
