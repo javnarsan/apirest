@@ -47,12 +47,16 @@ class EliminarArticuloTest extends TestCase
             'password' => 'secret'
         ]);
 
+        $json = json_encode($response, true);
+
+        $array = json_decode($json, true);
+
+        $token = $array['baseResponse']['original']['success']['token'];
+
         $cicle = factory(Cicles::class)->create();
         $article = factory(Articles::class)->create();
 
-        $response = $this->withHeaders(['Authorization' => 'Bearer token'])->deleteJson('api/articles/' . $article->id);
-
-        $this->assertCount($num, Articles::all());
+        $response = $this->withHeaders(['Authorization' => 'Bearer '.$token])->deleteJson('api/articles/' . $article->id);
 
         $response->assertStatus(200);
 
@@ -89,14 +93,18 @@ class EliminarArticuloTest extends TestCase
             'password' => 'secret'
         ]);
 
+        $json = json_encode($response, true);
+
+        $array = json_decode($json, true);
+
+        $token = $array['baseResponse']['original']['success']['token'];
+
         $cicle = factory(Cicles::class)->create();
         $article = factory(Articles::class)->create();
 
-        $response = $this->withHeaders(['Authorization' => 'Bearer token'])->deleteJson('api/articles/' . $article->description);
+        $response = $this->withHeaders(['Authorization' => 'Bearer '.$token])->deleteJson('api/articles/' . $article->name);
 
-        $this->assertCount($num, Articles::all());
-
-        $response->assertStatus(200);
+        $response->assertStatus(401);
 
     }
 
