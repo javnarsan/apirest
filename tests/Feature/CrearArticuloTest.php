@@ -17,9 +17,6 @@ class CrearArticuloTest extends TestCase
 
     /** @test */
     public function creado_correctamente() {
-        //Número de registros en la base de datos sumando 1 que vamos a crear
-        $num = Articles::all()->count()+1;
-        
         $this->withoutExceptionHandling();
 
         $user = factory(User::class)->create([
@@ -62,7 +59,7 @@ class CrearArticuloTest extends TestCase
         // Primero comprobamos que todo ha ido bien
         $response->assertStatus(200);
         
-        // Verifica que la respuesta incluya el token de acceso
+        // Verifica que la respuesta incluya el artículo
         $response->assertJsonStructure([
             'Article' => [
                 'title',
@@ -78,9 +75,6 @@ class CrearArticuloTest extends TestCase
 
     /** @test */
     public function error_al_crear() {
-        //Número de registros en la base de datos sumando 1 que vamos a crear
-        $num = Articles::all()->count()+1;
-        
         $this->withoutExceptionHandling();
 
         $user = factory(User::class)->create([
@@ -121,7 +115,7 @@ class CrearArticuloTest extends TestCase
         // Verifica que la respuesta tenga un estado de 401 (No autorizado)
         $response->assertStatus(401);
 
-        // Verifica que la respuesta incluya el mensaje de error 'No estás autorizado'
+        // Verifica que la respuesta incluya el mensaje de error 'The cicle id field is required.'
         $response->assertJson([
             "error" => [
                 "cicle_id" => [
